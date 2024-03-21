@@ -1,0 +1,65 @@
+<div class="card my-3 border-warning border-2 hien" style="margin: 0 190px; width: 900px;">
+    <div class="card-header bg-warning text-black text-center"><h4><b>CẬP NHẬT TÀI KHOẢN</b></h4></div>
+    <div class="card-body">
+        <form name="frmca">
+            <input type="text" name="username" class="form-control bg-info-subtle shadow-none" value="{{username}}"
+                disabled hidden>
+            <div class="mb-3 row">
+                <div class="col">
+                    <label>Họ và tên</label>
+                    <input type="text" name="fullname_new" class="form-control bg-info-subtle shadow-none"
+                        ng-model="fullname_new" required placeholder="Nhập họ và tên đầy đủ">
+                    <em>Họ và tên hiện tại: {{fullname}}</em>
+                    <em class="text-danger" ng-show="frmca.fullname_new.$invalid">Chưa nhập họ và tên</em>
+                </div>
+                <div class="col">
+                    <label>Email</label>
+                    <input type="email" name="email_new" class="form-control bg-info-subtle shadow-none"
+                        placeholder="Nhập địa chỉ email" required ng-model="email_new">
+                    <em>Email hiện tại: {{email}}</em>
+                    <em class="text-danger" ng-show="frmca.email_new.$invalid">Vui lòng nhập địa chỉ email</em>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <label>Giới tính</label>
+                    <select name="gender_new" class="form-select bg-info-subtle shadow-none" ng-model="gender_new"
+                        required>
+                        <option value="true" selected>Nam</option>
+                        <option value="false">Nữ</option>
+                    </select>
+                    <em>Giới tính hiện tại: {{gender === 'true' ? 'Nam' : 'Nữ'}}</em>
+                    <em class="text-danger" ng-show="frmca.gender_new.$invalid">Chọn giới tính</em>
+                </div>
+                <div class="col">
+                    <label>Ngày sinh</label>
+                    <input type="date" name="birthday_new" class="form-control bg-info-subtle shadow-none"
+                        ng-model="birthday_new" required>
+                    <em>Ngày sinh hiện tại: {{birthday}}</em>
+                    <em class="text-danger" ng-show="frmca.birthday_new.$invalid">Nhập rõ ngày sinh</em>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <label>Học phí</label>
+                    <input type="number" name="schoolfee_new" class="form-control bg-info-subtle shadow-none" required
+                        ng-model="schoolfee_new" placeholder="Nhập học phí">
+                    <em>Học phí hiện tại: {{schoolfee}}</em>
+                    <em class="text-danger" ng-show="frmca.schoolfee_new.$invalid">Nhập học phí</em>
+                </div>
+                <div class="col">
+                    <label>Điểm số</label>
+                    <input type="number" name="marks_new" class="form-control bg-info-subtle shadow-none" required
+                        ng-model="marks_new" placeholder="Nhập điểm số">
+                    <em>Điểm hiện tại: {{marks}}</em>
+                    <em class="text-danger" ng-show="frmca.marks_new.$invalid">Nhập điểm số từ 0 - 10</em>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer text-end">
+        <button type="button" class="btn btn-secondary col" ng-click="xoaacc()">Xóa tài khoản</button>
+        <button type="button" class="btn btn-warning col" ng-click="edit()" ng-disabled="frmca.$invalid">Cập
+            nhật</button>
+    </div>
+</div>

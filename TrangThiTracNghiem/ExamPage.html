@@ -1,0 +1,53 @@
+<div class="alert alert-warning" ng-show="username == null" style="width: 1295px;">
+    <h2>Bạn cần đăng nhập trước để thực hiện chức năng này</h2>
+</div>
+<div class="card my-3" ng-show="username != null" style="width: 1285px; margin-left: 5px;">
+    <div class="card-header h5 bg-warning">{{tenMH}}</div>
+    <div class="card-body">
+        <div class="mb-3" ng-repeat="ch in caccauhoi | limitTo: pageSize: start">
+            <p>Câu hỏi: {{ch.Text}}
+                <span class="badge rounded-pill text-bg-warning px-3 py-2 float-end">
+                    <i class="bi bi-clock-fill"></i> {{phut}}:{{giay}}
+                </span>
+            </p>
+            <div class="form-check" ng-repeat="p in ch.Answers">
+                <input type="radio" name="cauhoi_{{ch.Id}}" ng-model="answer" value="{{p.Id}}"
+                    class="form-check-input border-warning border-2" ng-click="ktPA(p.Id, ch.AnswerId, ch.Marks)">
+                <label class="form-check-label">{{p.Text}}</label>
+            </div>
+        </div>
+    </div>
+    <p class="text-center">
+        <button ng-click="first()" type="button" class="btn bg-black text-white mx-1 pt-1">&laquo; &laquo;</button>
+        <button ng-click="prev()" type="button" class="btn bg-black text-white mx-1 pt-1">&laquo;</button>
+        <button ng-click="next()" type="button" class="btn bg-black text-white mx-1 pt-1">&raquo;</button>
+        <button ng-click="last()" type="button" class="btn bg-black text-white mx-1 pt-1">&raquo; &raquo;</button>
+    </p>
+    <div class="card-footer text-muted">
+        <button type="button" class="btn btn-warning float-end fw-bold" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" ng-click="kt()">Kết thúc bài làm</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Kết thúc bài làm</h1>
+                    </div>
+                    <div class="modal-body" ng-if="kiemTra">
+                        Chúc mừng sinh viên <b class="text-danger">{{fullname}}</b> đã hoàn thành bài thi. <br>
+                        <b class="text-danger">Bạn đã đạt yêu cầu của bài thi.</b> <br>
+                        Bài thi của bạn đã đạt {{diem}}/{{caccauhoi.length}} điểm
+                    </div>
+                    <div class="modal-body" ng-if="!kiemTra">
+                        Chúc mừng sinh viên <b class="text-danger">{{fullname}}</b> đã hoàn thành bài thi. <br>
+                        <b class="text-danger">Bạn đã không đạt yêu cầu của bài thi! Chúc bạn may mắn lần sau.</b> <br>
+                        Bài thi của bạn đã đạt {{diem}}/{{caccauhoi.length}} điểm
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><a href="#"
+                                class="text-decoration-none text-black">Đóng</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

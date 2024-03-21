@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg" style="z-index: 1;">
+    <div class="container-fluid" style="background: black;">
+        <a class="navbar-brand text-white" href="index.html"><img
+                src="https://static.wixstatic.com/media/a91007_33239f81a1cc4990a681f8ce5d78dfad~mv2.png/v1/fit/w_600,h_216,q_90/a91007_33239f81a1cc4990a681f8ce5d78dfad~mv2.png"
+                alt="Logo" width="100%" height="40" class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation" style="background: white;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="#!gioithieu">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#!lienhe">Liên hệ - Góp ý</a>
+                </li>
+                <div class="nav-item">
+                    <a class="nav-link text-white" href="#!khoahoc">Khóa học</a>
+                </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" ng-show="username == null">
+                        Tài khoản
+                    </a>
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" ng-show="username != null">
+                        {{fullname}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#!dangky" ng-show="username == null">Đăng ký</a></li>
+                        <li><a class="dropdown-item" href="#!dangnhap" ng-show="username == null">Đăng nhập</a></li>
+                        <li><a class="dropdown-item" href="#!quenPass" ng-show="username == null">Quên mật khẩu</a></li>
+                        <!-- ngắt li -->
+                        <li><a class="dropdown-item" href="#" ng-click="thoat()" ng-show="username != null">Đăng xuất</a></li>
+                        <li><a class="dropdown-item" href="#!doiPass" ng-show="username != null">Đổi mật khẩu</a></li>
+                        <li><a class="dropdown-item" href="#!chinhacc" ng-show="username != null">Cập nhật tài khoản</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

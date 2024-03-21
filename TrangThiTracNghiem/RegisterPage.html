@@ -1,0 +1,73 @@
+<div class="card my-3 border-warning border-2 hien" style="margin: 0 190px; width: 900px;">
+    <div class="card-header bg-warning text-black text-center"><h4><b>FORM ĐĂNG KÝ</b></h4></div>
+    <div class="card-body">
+        <form name="frmdk">
+            <div class="mb-3 row">
+                <div class="col">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" name="username" class="form-control bg-success-subtle shadow-none"
+                        placeholder="Nhập tên đăng nhập" required ng-minlength="3" ng-model="Student.username">
+                    <em class="text-danger" ng-show="frmdk.username.$invalid">Tên đăng nhập phải >= bằng 3 ký tự</em>
+                </div>
+                <div class="col">
+                    <label>Họ và tên</label>
+                    <input type="text" name="fullname" class="form-control bg-success-subtle shadow-none"
+                        placeholder="Nhập họ và tên" required ng-model="Student.fullname">
+                    <em class="text-danger" ng-show="frmdk.fullname.$invalid">Chưa nhập họ và tên</em>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control bg-success-subtle shadow-none"
+                        placeholder="Nhập địa chỉ email" required ng-model="Student.email">
+                    <em class="text-danger" ng-show="frmdk.email.$invalid">Vui lòng nhập địa chỉ email</em>
+                </div>
+                <div class="col">
+                    <label>Mật khẩu</label>
+                    <input type="password" name="password" class="form-control bg-success-subtle shadow-none"
+                        placeholder="Nhập mật khẩu" required ng-minlength="6" ng-maxlength="16"
+                        ng-model="Student.password">
+                    <em class="text-danger" ng-show="frmdk.password.$invalid">Mật khẩu phải >= bằng 6 và <= 16 ký
+                            tự</em>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <label>Giới tính</label>
+                    <select name="gender" class="form-select bg-success-subtle shadow-none" required
+                        ng-model="Student.gender">
+                        <option value="true" selected>Nam</option>
+                        <option value="false">Nữ</option>
+                    </select>
+                    <em class="text-danger" ng-show="frmdk.gender.$invalid">Chọn giới tính</em>
+                </div>
+                <div class="col">
+                    <label>Ngày sinh</label>
+                    <input type="date" name="birthday" class="form-control bg-success-subtle shadow-none" required
+                        ng-model="Student.birthday">
+                    <em class="text-danger" ng-show="frmdk.birthday.$invalid">Nhập rõ ngày sinh</em>
+                </div>
+            </div>
+            <div class="    row">
+                <div class="col">
+                    <label>Học phí</label>
+                    <input type="number" name="schoolfee" class="form-control bg-success-subtle shadow-none" required
+                        ng-min="0" ng-model="Student.schoolfee" placeholder="Nhập học phí">
+                    <em class="text-danger" ng-show="frmdk.schoolfee.$invalid">Nhập học phí</em>
+                </div>
+                <div class="col">
+                    <label>Điểm số</label>
+                    <input type="number" name="marks" class="form-control bg-success-subtle shadow-none" required
+                        ng-min="0" ng-max="10" ng-model="Student.marks" placeholder="Nhập điểm số">
+                    <em class="text-danger" ng-show="frmdk.marks.$invalid">Nhập điểm số từ 0 - 10</em>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <b style="display: ruby-text;"><button type="submit" class="btn btn-warning w-50" ng-click="dangky()"
+                ng-disabled="frmdk.$invalid">Đăng ký</button></b>
+        <b><a href="#!dangnhap" style="text-decoration: none; color: black;">Đã có tài khoản?</a></b>
+    </div>
+</div>

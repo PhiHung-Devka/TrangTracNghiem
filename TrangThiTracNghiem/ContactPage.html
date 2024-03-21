@@ -1,0 +1,84 @@
+<div class="row my-3">
+    <div class="col">
+        <div class="map-area">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1959.2221586655728!2d106.62585892313992!3d10.853771073204092!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b6c59ba4c97%3A0x535e784068f1558b!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1705523124987!5m2!1svi!2s"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-center border-warning border-2" style="width: 127%;" ng-show="username == null">
+            <div class="card-header bg-warning text-black text-center">
+                <h4><b>FORM GÓP Ý</b></h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    Bạn cần đăng nhập trước để thực hiện chức năng này
+                </div>
+            </div>
+        </div>
+        <div class="card text-center border-warning border-2" style="width: 210%;"  ng-show="username != null">
+            <div class="card-header bg-warning text-black text-center">
+                <h4><b>FORM GÓP Ý</b></h4>
+                <div>
+                    <i>Kính mời nhập thông tin bên dưới</i>
+                </div>
+            </div>
+            <div class="card-body">
+                <form name="frmgy">
+                    <div class="mb-3">
+                        <label>Tên đăng nhập</label>
+                        <input type="text" name="username" class="form-control bg-success-subtle" value="{{username}}"
+                            disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control bg-success-subtle" value="{{email}}" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label>Nội dung</label>
+                        <textarea id="noidung" rows="5" class="form-control bg-success-subtle"
+                            placeholder="Nhập nội dung muốn góp ý"></textarea>
+                    </div>
+                    <p style="display: ruby-text;">
+                        <button type="button" class="btn btn-warning w-75" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"><b>Gửi đi</b></button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Góp ý</h1>
+                                </div>
+                                <div class="modal-body">
+                                    Cảm ơn bạn đã góp ý cho chúng tôi <br>
+                                    Chúng tôi sẽ sớm xem xét và cải thiện trải nghiệm của bạn
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><a href="#"
+                                            class="text-decoration-none text-black">Đóng</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .map-area {
+        width: 705px;
+        height: 495px;
+        background: #fff;
+        box-shadow: rgb(0, 0, 0, 0.35) 0 5px 15px;
+    }
+
+    .map-area iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+</style>

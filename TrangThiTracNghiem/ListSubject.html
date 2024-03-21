@@ -1,0 +1,26 @@
+<main class="row">
+    <article class="col-9">
+        <h1>Danh mục môn thi</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4 mx-0">
+            <div class="card text-center img-hover-zoom" ng-repeat="mh in Subject" ng-click="abc()">
+                <div class="card-body">
+                    <a href="#!tracnghiem/{{mh.Id}}/{{mh.Name}}"> <img src="Asm-TaiNguyen/images/logos/{{mh.Id}}.jpg"
+                            class="w-45 me-auto"></a>
+                </div>
+                <div class="card-footer text-body-secondary" style="height: 110%;">{{mh.Name | uppercase}}</div>
+            </div>
+        </div>
+        <style>
+            /* [2] Transition property for smooth transformation of images */
+            .img-hover-zoom img {
+                transition: transform .5s ease;
+            }
+
+            /* [3] Finally, transforming the image when container gets hovered */
+            .img-hover-zoom:hover {
+                transform: scale(1.1);
+            }
+        </style>
+    </article>
+    <aside class="col-3" ng-include="'includes/monhoc.html'"></aside>
+</main>

@@ -1,0 +1,28 @@
+<div class="card my-3 border-warning border-2 hien" style="margin: 0 380px; width: 500px;">
+    <div class="card-header bg-warning text-black text-center"><h4><b>FORM ĐĂNG NHẬP</b></h4></div>
+    <div class="card-body">
+        <form name="frmdn">
+            <div class="mb-3">
+                <label for="username" class="form-label">Tên đăng nhập</label>
+                <input type="text" name="username" class="form-control bg-success-subtle shadow-none"
+                    placeholder="Nhập tên đăng nhập" required ng-model="u">
+                <em class="text-danger" ng-show="frmdn.username.$invalid">Chưa nhập tên đăng nhập</em>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" name="password" class="form-control bg-success-subtle shadow-none"
+                    placeholder="Nhập mật khẩu" required ng-model="p">
+                <em class="text-danger" ng-show="frmdn.password.$invalid">Chưa nhập mật khẩu</em>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="rememberMe" class="form-check-input">
+                <label for="rememberMe" class="form-check-label">Ghi nhớ đăng nhập?</label>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <b style="display: ruby-text;"><button type="button" class="btn btn-warning w-50" ng-click="dangnhap()"
+                ng-disabled="frmdn.$invalid">Đăng nhập</button></b>
+        <b><a href="#!dangky" style="text-decoration: none; color: black;">Chưa có tài khoản?</a></b>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="card bg-warning">
+    <div class="card-header"><i class="bi bi-list"></i> DANH MỤC </div>
+    <div class="card-body p-0">
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="mh in cacmonhoc | orderBy: 'Name'">
+                    <a href="#!tracnghiem/{{mh.Id}}/{{mh.Name}}" style="color: black; text-decoration: none;">{{mh.Name | uppercase}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+    a:hover {
+        font-weight: bolder;
+    }
+</style>

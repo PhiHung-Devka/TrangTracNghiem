@@ -1,0 +1,30 @@
+<div class="card my-3 border-warning border-2" style="margin: 0 380px; width: 500px;">
+    <div class="card-header bg-warning text-black text-center"><h4><b>ĐỔI MẬT KHẨU</b></h4></div>
+    <div class="card-body">
+        <div class="alert alert-warning p-4" ng-show="username == null">
+            <h2>Bạn cần đăng nhập trước rồi mới đổi mật khẩu được</h2>
+        </div>
+        <form name="frmdp" ng-show="username != null">
+            <div class="mb-3">
+                <label>Tên đăng nhập</label>
+                <input type="text" name="username" class="form-control bg-success-subtle" value="{{username}}" disabled>
+            </div>
+            <div class="mb-3">
+                <label>Mật khẩu cũ</label>
+                <input type="password" ng-model="pass_old" name="pass_old" class="form-control bg-success-subtle" placeholder="Nhập mật khẩu cũ">
+            </div>
+            <div class="mb-3">
+                <label>Mật khẩu mới</label>
+                <input type="password" ng-model="pass_new1" name="pass_new1" class="form-control bg-success-subtle" placeholder="Nhập mật khẩu mới">
+            </div>
+            <div class="mb-3">
+                <label>Xác nhận mật khẩu mới</label>
+                <input type="password" ng-model="pass_new2" name="pass_new2" class="form-control bg-success-subtle" placeholder="Nhập mật khẩu mới">
+            </div>
+        </form>
+    </div>
+    <div class="card-footer text-end">
+        <button type="button" class="btn btn-secondary"><a href="#" class="text-black text-decoration-none">Đóng</a></button>
+        <button type="button" class="btn btn-warning" ng-click="doipass()">Đổi mật khẩu</button>
+    </div>
+</div>

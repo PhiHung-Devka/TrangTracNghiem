@@ -1,0 +1,18 @@
+<div class="card border-warning my-3 border-2" style="margin: 0 380px; width: 500px;">
+    <div class="card-header bg-warning text-black text-center"><h4><b>QUÊN MẬT KHẨU</b></h4></div>
+    <div class="card-body">
+        <form name="frmquenPass">
+            <div>
+                <label>Nhập địa chỉ email đã đăng ký</label>
+                <input ng-model="email_1" type="email" name="email" class="form-control bg-success-subtle"
+                    placeholder="Nhập email của bạn" required>
+                <em class="text-danger" ng-show="frmquenPass.email.$invalid">Chưa nhập địa chỉ email</em>
+            </div>
+            <button type="button" ng-click="quenpass()" class="btn btn-warning w-50 float-end"
+                ng-disabled="frmquenPass.$invalid">Lấy lại mật khẩu</button>
+        </form>
+    </div>
+    <div class="card-footer text-muted text-center">
+        <b>Quay lại <a href="#!dangnhap" class="text-warning">Đăng nhập</a></b>
+    </div>
+</div>
